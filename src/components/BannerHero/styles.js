@@ -69,11 +69,15 @@ export const Rodape = styled.div`
         a {
           text-decoration: none;
           color: ${({theme}) => theme.colors.gray[900]};
+          transition: all 0.2s;
+
+            &:hover {
+              color: ${({theme}) => theme.colors.primary.dark};
+            }
         }
       }
 
       span {
-        padding-top: 30px;
         margin-left: 8px;
       }
     }
