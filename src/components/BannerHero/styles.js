@@ -21,7 +21,7 @@ flex: 1;
 export const CardBanner = styled.div`
   width: 520px;
   border-radius: 40px;
-  box-shadow: 0px 20px 50px -15px rgba(29, 117, 101, 0.3);
+  box-shadow: 20px 20px 50px -15px rgba(29, 117, 101, 0.3);
   padding: 36px;
 
   p {
