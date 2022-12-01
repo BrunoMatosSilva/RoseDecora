@@ -1,4 +1,5 @@
 import { BannerHero } from '../components/BannerHero';
+import { Galeria } from '../components/Galeria';
 import { Header } from '../components/Header';
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <BannerHero />
+      <Galeria />
     </>
   );
 }

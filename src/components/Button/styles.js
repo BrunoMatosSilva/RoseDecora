@@ -25,13 +25,13 @@ export const StyledButton = styled.button`
     background: #ccc !important;
     cursor: default !important;
   }
-  ${({theme, danger}) => danger && css`
-    background: ${theme.colors.danger.main};
+  ${({theme, secondary}) => secondary && css`
+    background: ${theme.colors.primary.main};
     &:hover {
-      background: ${theme.colors.danger.light};
+      background: ${theme.colors.primary.light};
     }
     &:active {
-      background: ${theme.colors.danger.dark};
+      background: ${theme.colors.primary.dark};
     }
   `}
 `;

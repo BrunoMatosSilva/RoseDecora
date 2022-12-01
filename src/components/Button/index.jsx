@@ -5,14 +5,14 @@ export function Button({
   disabled,
   isLoading,
   children,
-  danger,
+  secondary,
   onClick,
 }){
   return (
     <StyledButton
       type={type}
       disabled={disabled || isLoading}
-      danger={danger}
+      secondary={secondary}
       onClick={onClick}
     >
       {!isLoading && children}
