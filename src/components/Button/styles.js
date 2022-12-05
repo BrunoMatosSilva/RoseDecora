@@ -27,6 +27,7 @@ export const StyledButton = styled.button`
   }
   ${({theme, secondary}) => secondary && css`
     background: ${theme.colors.primary.main};
+
     &:hover {
       background: ${theme.colors.primary.light};
     }
