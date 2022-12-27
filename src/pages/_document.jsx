@@ -1,20 +1,31 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
-    ctx.renderPage = () =>
-      originalRenderPage({
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
 
-        enhanceApp: (App) => App,
-
-        enhanceComponent: (Component) => Component,
-      });
-
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
@@ -29,14 +40,14 @@ class MyDocument extends Document {
           />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <title>RoseFrancis | Decoração de Festa</title>
         </Head>
         <body>
           <Main />
+          <div id='modal-root'></div>
           <NextScript />
         </body>
       </Html>
     );
   }
 }
-
-export default MyDocument;

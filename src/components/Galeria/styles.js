@@ -25,10 +25,12 @@ export const ContentGalery = styled.div`
 `;
 
 export const CardGalery = styled.div`
-  a{
+ button{
     position: absolute;
     opacity: 0.6;
     transition: all 0.2s;
+    background: transparent;
+    border: none;
 
     &:hover {
       opacity: 1;

@@ -1,13 +1,28 @@
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
-import { images } from '../../mocks/galeria';
 
 import { Title } from '../Title';
 import { Button } from '../Button';
 
-import { CardGalery, Container, ContentGalery, Footer } from './styles';
+import { CardGalery, Container, ContentGalery, Footer} from './styles';
+import { useEffect, useState } from 'react';
+import { Modal } from '../Modal';
 
-export function Galeria() {
+export function Galeria({ images, nextCursor}) {
+  const [showModal, setShowModal] = useState(false);
+  const [imageVisible, setImageVisible] = useState(null);
+
+  useEffect(() => {
+    (async function run() {
+      const results = await fetch('api/search', {
+        method: 'POST',
+        body: JSON.stringify({
+          nextCursor
+        })
+      }).then(response => response.json());
+      return results;
+    })();
+  },[]);
 
   const [sliderRef] = useKeenSlider({
     mode: 'free-snap',
@@ -18,8 +33,18 @@ export function Galeria() {
     },
   });
 
+  function handleOpenModal(id){
+    setShowModal(true);
+    setImageVisible(id);
+  }
+
   return (
     <Container>
+      <Modal
+        onClose={() => setShowModal(false)}
+        show={showModal}
+        image={imageVisible}
+      />
       <ContentGalery>
         <Title titleFirst="Decorações" titleLast="Realizadas!" />
         <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
@@ -27,21 +52,21 @@ export function Galeria() {
         <div ref={sliderRef} className="keen-slider containerSlaide">
           {images.map((image) => (
             <CardGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
-              <a href="#">
-                <img src={`/galery/${image.url}`}
-                  alt={image.name}
+              <button onClick={handleOpenModal}>
+                <img src={image.url}
+                  alt={image.title}
                 />
-              </a>
+              </button>
               <div>
-                <strong>{image.name}</strong>
-                <p>Clique na imagem para ver mais fotos</p>
+                <strong>{image.title}</strong>
+                <p>Clique na imagem para ver tamanho original.</p>
               </div>
             </CardGalery>
           ))}
         </div>
 
         <Footer>
-          <Button secondary="secondary" type="button" >Ver Decorações</Button>
+          <Button secondary="secondary" type="button">Ver Decorações</Button>
         </Footer>
 
       </ContentGalery>
