@@ -11,6 +11,7 @@ import { Modal } from '../Modal';
 export function Galeria({ images, nextCursor}) {
   const [showModal, setShowModal] = useState(false);
   const [imageVisible, setImageVisible] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
 
   useEffect(() => {
     (async function run() {
@@ -33,9 +34,10 @@ export function Galeria({ images, nextCursor}) {
     },
   });
 
-  function handleOpenModal(id){
+  function handleOpenModal(image){
     setShowModal(true);
-    setImageVisible(id);
+    setImageVisible(image.url);
+    setCurrentIndex(image.id);
   }
 
   return (
@@ -43,7 +45,8 @@ export function Galeria({ images, nextCursor}) {
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}
-        image={imageVisible}
+        imageVisible={imageVisible}
+        currentIndex={currentIndex}
       />
       <ContentGalery>
         <Title titleFirst="Decorações" titleLast="Realizadas!" />
@@ -52,7 +55,7 @@ export function Galeria({ images, nextCursor}) {
         <div ref={sliderRef} className="keen-slider containerSlaide">
           {images.map((image) => (
             <CardGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
-              <button onClick={handleOpenModal}>
+              <button onClick={() => handleOpenModal(image)}>
                 <img src={image.url}
                   alt={image.title}
                 />
