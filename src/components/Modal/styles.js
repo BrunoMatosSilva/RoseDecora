@@ -14,20 +14,40 @@ export const Overlay = styled.div`
 `;
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   width: 100%;
-  max-width: 450px;
+  max-width: 700px;
   background: #fff;
   border-radius: 4px;
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
-  > h1 {
-    font-size: 22px;
-    color: ${({theme, danger}) => (
-    danger ? theme.colors.danger.main : theme.colors.gray[900]
-  )}
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    button {
+          border: 0;
+          background: transparent;
+          line-height: 0;
+        }
   }
+
   .modal-body {
-    margin-top: 32px;
+
+    span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      > img {
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+    }
   }
 `;
 

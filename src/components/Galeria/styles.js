@@ -67,4 +67,28 @@ export const CardGalery = styled.div`
 
 export const Footer = styled.div`
   margin: 48px 0;
+
+  a {
+  height: 52px;
+  padding: 0 16px;
+  border: none;
+  background: ${({theme}) => theme.colors.primary.main};
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
+  padding: 0 26px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s ease-in;
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: ${({theme}) => theme.colors.primary.light};
+  }
+  &:active {
+    background: ${({theme}) => theme.colors.primary.dark};
+  }
+  }
 `;

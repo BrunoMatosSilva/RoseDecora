@@ -5,13 +5,13 @@ import { Contato } from '../components/Contato';
 import { Galeria } from '../components/Galeria';
 import { Header } from '../components/Header';
 
-export default function Home({images, nextCursor}) {
+export default function Home({images}) {
 
   return (
     <>
       <Header />
       <BannerHero />
-      <Galeria images={images} nextCursor={nextCursor} />
+      <Galeria images={images} />
       <Blog />
       <Contato />
     </>
@@ -21,13 +21,12 @@ export default function Home({images, nextCursor}) {
 export async function getStaticProps() {
   const results = await search();
 
-  const { resources, next_cursor: nextCursor } = results;
+  const { resources } = results;
 
   const images = mapImageResources(resources);
   return {
     props: {
       images,
-      nextCursor
     }
   };
 }

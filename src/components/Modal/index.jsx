@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Container, Overlay } from './styles';
 import ReactDOM from 'react-dom';
+import { X } from 'phosphor-react';
 
 export function Modal({ show, onClose, imageVisible, currentIndex}) {
   const [isBrowser, setIsBrowser] = useState(false);
 
-  console.log(imageVisible, currentIndex);
   useEffect(() => {
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape') {
+        onClose();
+      }
+    });
     setIsBrowser(true);
-  }, []);
+  }, [isBrowser]);
 
   function handleCloseClick(e) {
     e.preventDefault();
@@ -18,12 +23,18 @@ export function Modal({ show, onClose, imageVisible, currentIndex}) {
   const modalContent = show ? (
     <Overlay>
       <Container>
-        <a href="#" onClick={handleCloseClick}>
-            x
-          <div key={currentIndex}>
+        <header>
+          <button type="button" onClick={handleCloseClick}>
+            <X size={25}/>
+          </button>
+        </header>
+
+        <div className="modal-body">
+          <span key={currentIndex}>
             <img src={imageVisible} />
-          </div>
-        </a>
+          </span>
+        </div>
+
 
       </Container>
     </Overlay>
