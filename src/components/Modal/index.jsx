@@ -4,25 +4,25 @@ import ReactDOM from 'react-dom';
 import { X } from 'phosphor-react';
 
 export function Modal({ show, onClose, imageVisible, currentIndex}) {
-  const [isBrowser, setIsBrowser] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(show);
 
   useEffect(() => {
+    setIsBrowser(true);
     document.addEventListener('keydown', (event) => {
       if(event.key === 'Escape') {
-        onClose();
+        onClose(false);
       }
     });
-    setIsBrowser(true);
-  }, [isBrowser]);
+  }, [setIsBrowser]);
 
   function handleCloseClick(e) {
     e.preventDefault();
-    onClose();
+    onClose(false);
   }
 
   const modalContent = show ? (
-    <Overlay>
-      <Container>
+    <Overlay isLeaving={!show}>
+      <Container isLeaving={!show}>
         <header>
           <button type="button" onClick={handleCloseClick}>
             <X size={25}/>

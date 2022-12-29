@@ -4,6 +4,7 @@ import { Blog } from '../components/Blog';
 import { Contato } from '../components/Contato';
 import { Galeria } from '../components/Galeria';
 import { Header } from '../components/Header';
+import Rodape from '../components/Rodape';
 
 export default function Home({images}) {
 
@@ -14,6 +15,7 @@ export default function Home({images}) {
       <Galeria images={images} />
       <Blog />
       <Contato />
+      <Rodape />
     </>
   );
 }
