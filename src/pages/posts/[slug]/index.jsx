@@ -1,15 +1,26 @@
 import Prismic from '@prismicio/client';
+import Link from 'next/link';
+import { ArrowLeft } from 'phosphor-react';
 import { RichText } from 'prismic-dom';
 import { getPrismicClient } from '../../api/prismic';
+import { Container } from './styles';
 
 export default function Post({post}) {
 
-  console.log({post});
-
   return(
-    <div>
-      <h1>Post</h1>
-    </div>
+    <Container>
+      <header>
+        <span>
+          <Link href="/"><ArrowLeft size={50} /></Link>
+        </span>
+      </header>
+      <section>
+        <img src={post.image} alt={post.title}/>
+        <h1>{post.title}</h1>
+        <b>Data:</b><date>{post.createdAt}</date>
+        <div dangerouslySetInnerHTML={{ __html: post.text}} />
+      </section>
+    </Container>
   );
 }
 
@@ -42,9 +53,9 @@ export const getStaticProps = async context => {
     title: RichText.asText(response.data.title),
     text: RichText.asHtml(response.data.text),
     image: response.data.thumbnail.url,
-    updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
+    createdAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
       day: '2-digit',
-      month: 'long',
+      month: '2-digit',
       year: 'numeric'
     })
   };

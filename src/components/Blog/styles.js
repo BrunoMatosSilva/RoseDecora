@@ -4,6 +4,16 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
+
+  a {
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.2s all;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Content = styled.div`
