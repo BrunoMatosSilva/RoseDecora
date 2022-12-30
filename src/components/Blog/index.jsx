@@ -4,6 +4,7 @@ import { Button } from '../Button';
 
 import imgPostNotFound from '../../assets/images/postnotfound.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Blog({postsBlog}) {
 
@@ -24,21 +25,23 @@ export function Blog({postsBlog}) {
           )}
 
           {postsBlog.slice(0, 8).map((post) => (
-            <CardPost key={post.slug}>
-              <section>
-                <header>
-                  <img src={post.thumbnail} alt={post.title} />
-                </header>
-                <div className='titlePost'>
-                  <p>{post.title}</p>
-                </div>
-                <footer>
-                  <span>
-                    {post.dateAt}
-                  </span>
-                </footer>
-              </section>
-            </CardPost>
+            <Link href={`/posts/${post.slug}`} key={post.slug}>
+              <CardPost >
+                <section>
+                  <header>
+                    <img src={post.thumbnail} alt={post.title} />
+                  </header>
+                  <div className='titlePost'>
+                    <p>{post.title}</p>
+                  </div>
+                  <footer>
+                    <span>
+                      {post.dateAt}
+                    </span>
+                  </footer>
+                </section>
+              </CardPost>
+            </Link>
           ))}
         </ContainerPosts>
 

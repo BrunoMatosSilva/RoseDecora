@@ -44,7 +44,6 @@ export async function getStaticProps() {
         month: 'long',
         year: 'numeric'
       }),
-      text: post.data.text.find(content => content.type === 'paragraph')?.text ?? '',
       thumbnail: post.data.thumbnail.url
     };
   });
