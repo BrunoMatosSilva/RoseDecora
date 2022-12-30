@@ -16,9 +16,8 @@ export const Content = styled.div`
 `;
 
 export const ContainerPosts = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   margin-top: 48px;
 `;
@@ -35,12 +34,16 @@ export const CardPost = styled.div`
     border-radius: 8px 8px 0px 0px;
   }
 
-  p {
+  .titlePost {
+    height: 100px;
+
+    p {
     color: ${({theme}) => theme.colors.primary.dark};
     font-weight: 600;
     font-size: 16px;
     margin-left: 14px;
     margin-right: 14px;
+  }
   }
 
   footer {

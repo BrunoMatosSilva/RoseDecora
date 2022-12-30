@@ -1,12 +1,11 @@
 import { CardPost, Container, ContainerPosts, Content, ContentPostNotFound, Footer } from './styles';
 import { Title } from '../Title';
-import { posts } from '../../mocks/blog';
 import { Button } from '../Button';
 
 import imgPostNotFound from '../../assets/images/postnotfound.svg';
 import Image from 'next/image';
 
-export function Blog() {
+export function Blog({postsBlog}) {
 
   return (
     <Container>
@@ -16,7 +15,7 @@ export function Blog() {
         decoração que transforma sonhos em realidade.</p>
 
         <ContainerPosts>
-          {posts.length < 1 && (
+          {postsBlog.length < 1 && (
             <ContentPostNotFound>
               <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
               <span>Nenhum post foi encontrado!</span>
@@ -24,13 +23,13 @@ export function Blog() {
 
           )}
 
-          {posts.map((post) => (
-            <CardPost key={post.id}>
+          {postsBlog.slice(0, 8).map((post) => (
+            <CardPost key={post.slug}>
               <section>
                 <header>
-                  <img src={`/blog/${post.imgUrl}`} alt={post.title} />
+                  <img src={post.thumbnail} alt={post.title} />
                 </header>
-                <div>
+                <div className='titlePost'>
                   <p>{post.title}</p>
                 </div>
                 <footer>
@@ -43,9 +42,9 @@ export function Blog() {
           ))}
         </ContainerPosts>
 
-        {posts.length > 0 && (<Footer>
+        <Footer>
           <Button secondary="secondary" type="button" >Ver Publicações</Button>
-        </Footer>)}
+        </Footer>
       </Content>
     </Container>
   );
