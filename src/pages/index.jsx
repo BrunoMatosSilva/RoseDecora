@@ -29,7 +29,8 @@ export async function getStaticProps() {
 
   const pages = await prismic.query(
     [Prismic.Predicates.at('document.type', 'blog')],
-    { orderings: '[document.first_publication_date desc]' }
+    {pageSize: 8,
+      orderings: '[document.first_publication_date desc]' }
   );
   const { resources } = results;
 

@@ -49,7 +49,6 @@ export function Galeria({ images}) {
                 />
               </button>
               <div>
-                <strong>{image.title}</strong>
                 <p>Clique na imagem para ver tamanho original.</p>
               </div>
             </CardGalery>

@@ -1,6 +1,5 @@
 import { CardPost, Container, ContainerPosts, Content, ContentPostNotFound, Footer } from './styles';
 import { Title } from '../Title';
-import { Button } from '../Button';
 
 import imgPostNotFound from '../../assets/images/postnotfound.svg';
 import Image from 'next/image';
@@ -24,7 +23,7 @@ export function Blog({postsBlog}) {
 
           )}
 
-          {postsBlog.slice(0, 8).map((post) => (
+          {postsBlog.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <CardPost >
                 <section>
@@ -46,7 +45,7 @@ export function Blog({postsBlog}) {
         </ContainerPosts>
 
         <Footer>
-          <Button secondary="secondary" type="button" >Ver Publicações</Button>
+          <Link href="/posts">Ver Publicações</Link>
         </Footer>
       </Content>
     </Container>

@@ -1,7 +1,6 @@
 import Prismic from '@prismicio/client';
-import Link from 'next/link';
-import { ArrowLeft } from 'phosphor-react';
 import { RichText } from 'prismic-dom';
+import { HeaderBack } from '../../../components/HeaderBack';
 import { getPrismicClient } from '../../api/prismic';
 import { Container } from './styles';
 
@@ -9,11 +8,7 @@ export default function Post({post}) {
 
   return(
     <Container>
-      <header>
-        <span>
-          <Link href="/"><ArrowLeft size={50} /></Link>
-        </span>
-      </header>
+      <HeaderBack />
       <section>
         <img src={post.image} alt={post.title}/>
         <h1>{post.title}</h1>

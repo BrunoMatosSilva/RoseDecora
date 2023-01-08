@@ -1,12 +1,11 @@
 import { mapImageResources, search } from '../../lib/cloudinary';
-import Link from 'next/link';
-import { ArrowLeft } from 'phosphor-react';
 import { Modal } from '../../components/Modal';
 import { Button } from '../../components/Button';
 
 import { Container, ContentGalery } from './styles';
 import { useState } from 'react';
 import { Title } from '../../components/Title';
+import { HeaderBack } from '../../components/HeaderBack';
 
 export default function Decoracoes({
   images: defaultImages,
@@ -57,11 +56,7 @@ export default function Decoracoes({
         imageVisible={imageVisible}
         currentIndex={currentIndex}
       />
-      <header>
-        <span>
-          <Link href="/"><ArrowLeft size={50} /></Link>
-        </span>
-      </header>
+      <HeaderBack />
 
       <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
       <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
