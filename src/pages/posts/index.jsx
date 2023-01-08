@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { HeaderBack } from '../../components/HeaderBack';
 import { Button } from '../../components/Button';
 
-export default function Posts({postsBlog}){
+export default function Posts({postsPagination}){
 
   return(
     <Container>
@@ -20,7 +20,7 @@ export default function Posts({postsBlog}){
 
       <Content>
         <ContainerPosts>
-          {postsBlog.length < 1 && (
+          {postsPagination.postsBlog.length < 1 && (
             <ContentPostNotFound>
               <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
               <span>Nenhum post foi encontrado!</span>
@@ -28,7 +28,7 @@ export default function Posts({postsBlog}){
 
           )}
 
-          {postsBlog.map((post) => (
+          {postsPagination.postsBlog.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <CardPost >
                 <section>
@@ -78,9 +78,14 @@ export async function getStaticProps() {
     };
   });
 
+  const postsPagination = {
+    next_page: pages.next_page,
+    postsBlog
+  };
+
   return {
     props: {
-      postsBlog,
+      postsPagination
     }
   };
 }
