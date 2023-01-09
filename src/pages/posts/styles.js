@@ -22,7 +22,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   padding-top: 32px;
 `;
 
@@ -102,7 +101,13 @@ export const ContentPostNotFound = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
-  img {
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
     height: 80%;
   }
 
@@ -111,5 +116,6 @@ flex-direction: column;
     font-weight: 700;
     font-size: 24px;
     margin-top: 16px;
+  }
   }
 `;

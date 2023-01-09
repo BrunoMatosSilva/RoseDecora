@@ -9,8 +9,41 @@ import { RichText } from 'prismic-dom';
 import Image from 'next/image';
 import { HeaderBack } from '../../components/HeaderBack';
 import { Button } from '../../components/Button';
+import { useState } from 'react';
 
 export default function Posts({postsPagination}){
+
+  const [posts, setPosts] = useState(postsPagination.postsBlog);
+  const [nextPage, setNextPage] = useState(postsPagination.next_page);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  async function handleNextPage(){
+    if (currentPage !== 1 && nextPage === null) {
+      return;
+    }
+
+    const postsResults = await fetch(`${nextPage}`).then(response =>
+      response.json()
+    );
+
+    setNextPage(postsResults.next_page);
+    setCurrentPage(postsResults.page);
+
+    const newPosts = postsResults.results.map(post => {
+      return {
+        slug: post.uid,
+        title: RichText.asText(post.data.title),
+        dateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric'
+        }),
+        thumbnail: post.data.thumbnail.url
+      };
+    });
+
+    setPosts([...posts, ...newPosts]);
+  }
 
   return(
     <Container>
@@ -20,15 +53,7 @@ export default function Posts({postsPagination}){
 
       <Content>
         <ContainerPosts>
-          {postsPagination.postsBlog.length < 1 && (
-            <ContentPostNotFound>
-              <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
-              <span>Nenhum post foi encontrado!</span>
-            </ContentPostNotFound>
-
-          )}
-
-          {postsPagination.postsBlog.map((post) => (
+          {posts.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <CardPost >
                 <section>
@@ -48,9 +73,19 @@ export default function Posts({postsPagination}){
             </Link>
           ))}
         </ContainerPosts>
+        {posts.length < 1 && (
+          <ContentPostNotFound>
+            <section>
+              <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
+              <span>Nenhum post foi encontrado!</span>
+            </section>
+          </ContentPostNotFound>
+        )}
       </Content>
       <Footer>
-        <Button secondary="secondary">Carregar Mais</Button>
+        {nextPage && (
+          <Button secondary="secondary" onClick={handleNextPage}>Carregar Mais</Button>
+        )}
       </Footer>
     </Container>
   );
