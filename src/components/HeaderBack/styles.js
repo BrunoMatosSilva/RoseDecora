@@ -7,13 +7,9 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   background: ${({theme}) => theme.colors.primary.background};
-  margin-bottom: 2rem;
 
   > span {
-    width: 1216px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+    margin-left: 5rem;
      a {
       color: ${({theme}) => theme.colors.primary.lighter};
       transition: 0.2s all;

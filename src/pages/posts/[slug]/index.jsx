@@ -1,5 +1,6 @@
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
+import BannerProjeto from '../../../components/BannerProjeto';
 import { HeaderBack } from '../../../components/HeaderBack';
 import { getPrismicClient } from '../../api/prismic';
 import { Container } from './styles';
@@ -9,10 +10,17 @@ export default function Post({post}) {
   return(
     <Container>
       <HeaderBack />
+      <BannerProjeto
+        title={post.title}
+        imgUrl={post.image}
+      />
       <section>
-        <img src={post.image} alt={post.title}/>
-        <h1>{post.title}</h1>
-        <b>Data:</b><date>{post.createdAt}</date>
+        <div className="header">
+          <h1>{post.title}</h1>
+          <span>
+            <b>Data:</b><date>{post.createdAt}</date>
+          </span>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: post.text}} />
       </section>
     </Container>

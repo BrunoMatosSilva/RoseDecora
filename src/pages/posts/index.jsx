@@ -65,7 +65,7 @@ export default function Posts({postsPagination}){
                   </div>
                   <footer>
                     <span>
-                      {post.dateAt}
+                      <date>{post.dateAt}</date>
                     </span>
                   </footer>
                 </section>
@@ -96,7 +96,7 @@ export async function getStaticProps() {
 
   const pages = await prismic.query(
     [Prismic.Predicates.at('document.type', 'blog')],
-    {pageSize: 1,
+    {pageSize: 8,
       orderings: '[document.first_publication_date desc]' }
   );
 
@@ -106,7 +106,7 @@ export async function getStaticProps() {
       title: RichText.asText(post.data.title),
       dateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
         day: '2-digit',
-        month: 'long',
+        month: '2-digit',
         year: 'numeric'
       }),
       thumbnail: post.data.thumbnail.url

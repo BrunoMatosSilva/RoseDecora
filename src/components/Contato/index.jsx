@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { ContactDetails, Container, Form, Textarea } from './styles';
+import { ContactDetails, Container} from './styles';
 import separador from '../../assets/images/separador.svg';
-import Input from '../Input';
-import { Button } from '../Button';
 import { WhatsappLogo } from 'phosphor-react';
+import { FormContato } from './Form';
 
 export function Contato() {
   return (
@@ -13,18 +12,7 @@ export function Contato() {
         <Image src={separador} alt="separador" />
       </header>
       <p>Preencha o formulário abaixo que nossa equipe entrara em contato o mais breve possível.</p>
-      <Form>
-        <Input
-          placeholder="NOME"
-        />
-        <Input
-          placeholder="E-MAIL"
-        />
-        <Textarea placeholder="MENSAGEM" />
-        <div>
-          <Button type="submit">Enviar</Button>
-        </div>
-      </Form>
+      <FormContato />
 
       <h2>Caso prefira <strong>temos</strong> o whatsapp</h2>
 

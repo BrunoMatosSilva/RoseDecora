@@ -1,6 +1,7 @@
 export default {
   colors: {
     background: '#FFFFFF',
+    gradient: 'linear-gradient(225deg, #CACACA 0%, #3F3D56 100%);',
     primary: {
       lighter: '#F2F2F2',
       light: '#17DBE5',
@@ -8,6 +9,7 @@ export default {
       main: '#00ABB3',
       dark: '#2CB49B',
     },
+
     gray: {
       900: '#000000',
       300: '#E5E5E5',

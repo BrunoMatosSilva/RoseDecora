@@ -42,7 +42,7 @@ export async function getStaticProps() {
       title: RichText.asText(post.data.title),
       dateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
         day: '2-digit',
-        month: 'long',
+        month: '2-digit',
         year: 'numeric'
       }),
       thumbnail: post.data.thumbnail.url
