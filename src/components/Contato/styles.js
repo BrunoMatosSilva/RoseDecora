@@ -51,13 +51,13 @@ export const Textarea = styled.textarea`
   width: 100%;
   border: none;
   height: 150px;
-  color: ${({theme}) => theme.colors.primary.main};
+  color: ${({theme}) => theme.colors.gray[900]};
   background: #fff;
   border: 2px solid #fff;
   border-radius: 4px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
   outline: none;
-  padding: 0 16px;
+  padding: 10px 16px;
   font-size: 16px;
   transition: border 0.2s ease-in;
   appearance: none;

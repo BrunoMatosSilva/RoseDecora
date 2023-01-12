@@ -4,6 +4,7 @@ import Input from '../Input';
 import { Form, Textarea } from './styles';
 import { Button } from '../Button';
 import { useState } from 'react';
+import themes from '../../styles/themes/default';
 
 export function FormContato(){
   const [nome, setNome] = useState('');
@@ -14,10 +15,12 @@ export function FormContato(){
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (loading) return;
-
     if (!nome.trim() || !email.trim() || !mensagem.trim()) {
       toast('Preencha todos os campos para enviar sua mensagem!', {
+        style: {
+          background: themes.colors.danger.dark,
+          color: '#fff'
+        }
       });
       return;
     }
@@ -35,9 +38,17 @@ export function FormContato(){
       setMensagem('');
 
       toast('Mensagem enviada com sucesso!', {
+        style: {
+          background: themes.colors.success.main,
+          color: '#fff'
+        }
       });
     } catch (err) {
       toast('Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente!', {
+        style: {
+          background: themes.colors.danger.dark,
+          color: '#fff'
+        }
       });
     } finally {
       setLoading(false);
@@ -45,28 +56,28 @@ export function FormContato(){
   }
 
   return (
-    <Form data-aos="fade-up" onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Input
-        placeholder="NOME"
+        placeholder="NOME *"
         value={nome}
         onChange={({ target }) => setNome(target.value)}
         name="nome"
       />
       <Input
-        placeholder="E-MAIL"
+        placeholder="E-MAIL *"
         value={email}
         onChange={({ target }) => setEmail(target.value)}
         type="email"
         name="email"
       />
       <Textarea
-        placeholder="MENSAGEM"
+        placeholder="MENSAGEM *"
         value={mensagem}
         name="mensagem"
         onChange={({ target }) => setMensagem(target.value)}
       />
       <div>
-        <Button type="submit">Enviar</Button>
+        <Button type="submit" disabled={loading}>Enviar</Button>
       </div>
     </Form>
   );

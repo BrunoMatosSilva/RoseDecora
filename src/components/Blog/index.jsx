@@ -8,7 +8,7 @@ import Link from 'next/link';
 export function Blog({postsBlog}) {
 
   return (
-    <Container>
+    <Container data-aos="fade-left" data-aos-delay="100">
       <Content>
         <Title titleFirst="Curisosidades sobre" titleLast="Decoração!" />
         <p>Aqui você pode ver algumas matérias ou dicas sobre esse universo da

@@ -6,6 +6,18 @@ export default createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+
+  ::-webkit-scrollbar {
+      width: 8px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.primary.main};
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track{
+      background: ${({ theme }) => theme.colors.primary.lighter};
+    }
 }
 body {
   font-size: 16px;

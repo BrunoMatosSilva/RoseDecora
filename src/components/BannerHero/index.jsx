@@ -8,7 +8,7 @@ import { Title } from '../Title';
 
 export function BannerHero() {
   return (
-    <Container>
+    <Container data-aos="fade-right">
       <ContentBanner>
         <CardBanner>
           <Title titleFirst="Sua Festa" titleLast="da cor do seu sonho!" />
@@ -49,7 +49,7 @@ export function BannerHero() {
                 <a href="#">Fale Conosco</a>
               </strong>
               <span>
-                <Image src={arrow} alt="seta para esquerda" />
+                <Image src={arrow} alt="seta para esquerda"/>
               </span>
             </div>
           </Rodape>

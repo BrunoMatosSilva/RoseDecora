@@ -1,5 +1,7 @@
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { mapImageResources, search } from '../lib/cloudinary';
 import { BannerHero } from '../components/BannerHero';
 import { Blog } from '../components/Blog';
@@ -8,9 +10,12 @@ import { Galeria } from '../components/Galeria';
 import { Header } from '../components/Header';
 import Rodape from '../components/Rodape';
 import { getPrismicClient } from './api/prismic';
+import { useEffect } from 'react';
 
 export default function Home({images, postsBlog}) {
-
+  useEffect(() => {
+    Aos.init({ durations: 1500 });
+  }, []);
   return (
     <>
       <Header />

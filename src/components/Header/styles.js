@@ -6,6 +6,9 @@ export const Container = styled.div`
   height: 126px;
   padding-left: 50px;
   padding-right: 50px;
+  position: sticky;
+  top:0%;
+  z-index: 999;
 `;
 
 export const Content = styled.div`
@@ -23,10 +26,12 @@ export const Content = styled.div`
     li {
       list-style-type: none;
 
-      a {
+      button {
         text-decoration: none;
         color: ${({theme}) => theme.colors.gray[300]};
         font-size: 16px;
+        background: transparent;
+        border: none;
         transition: all 0.2;
 
         &:hover {

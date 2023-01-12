@@ -29,15 +29,15 @@ export function Galeria({ images}) {
   }
 
   return (
-    <Container>
+    <Container data-aos="fade-right" data-aos-delay="100">
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}
         imageVisible={imageVisible}
         currentIndex={currentIndex}
       />
-      <ContentGalery>
-        <Title titleFirst="Decorações" titleLast="Realizadas!" />
+      <ContentGalery >
+        <Title titleFirst="Decorações" titleLast="Realizadas!"/>
         <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
 
         <div ref={sliderRef} className="keen-slider containerSlaide">
