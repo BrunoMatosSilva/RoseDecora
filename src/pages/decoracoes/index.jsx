@@ -2,7 +2,7 @@ import { mapImageResources, search } from '../../lib/cloudinary';
 import { Modal } from '../../components/Modal';
 import { Button } from '../../components/Button';
 
-import { Container, ContentGalery } from './styles';
+import { Container, Content, ContentGalery } from './styles';
 import { useState } from 'react';
 import { Title } from '../../components/Title';
 import { HeaderBack } from '../../components/HeaderBack';
@@ -56,28 +56,30 @@ export default function Decoracoes({
         imageVisible={imageVisible}
         currentIndex={currentIndex}
       />
-      <HeaderBack />
+      <HeaderBack path="/" />
 
-      <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
-      <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
-      <section>
-        {images.map((image) => (
-          <ContentGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
-            <button onClick={() => handleOpenModal(image)}>
-              <img src={image.url}
-                alt={image.title}
-              />
-            </button>
-          </ContentGalery>
-        ))}
-      </section>
-      {nextCursor !== undefined && (
-        <div className="buttonLoadMore">
-          <Button secondary="secondary" onClick={handleLoadMore}>
+      <Content>
+        <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
+        <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
+        <section>
+          {images.map((image) => (
+            <ContentGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
+              <button onClick={() => handleOpenModal(image)}>
+                <img src={image.url}
+                  alt={image.title}
+                />
+              </button>
+            </ContentGalery>
+          ))}
+        </section>
+        {nextCursor !== undefined && (
+          <div className="buttonLoadMore">
+            <Button secondary="secondary" onClick={handleLoadMore}>
             Carregar Mais
-          </Button>
-        </div>
-      )}
+            </Button>
+          </div>
+        )}
+      </Content>
     </Container>
   );
 }

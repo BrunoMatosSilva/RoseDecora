@@ -23,6 +23,10 @@ body {
   font-size: 16px;
   background: ${({ theme }) => theme.colors.background};
   color: ${({theme}) => theme.colors.gray[900]};
+
+  @media (max-width: 599px) {
+        font-size: 14px;
+      }
 }
 button {
   cursor: pointer;

@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import logo from '../../assets/images/logo.svg';
 
-
 export function Header() {
 
   function handleScrollTop() {

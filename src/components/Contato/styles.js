@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   background: ${({theme}) => theme.colors.primary.background};
+  padding: 0 10px;
 
   p {
     margin-top: 24px;
@@ -16,6 +17,10 @@ export const Container = styled.div`
     margin-top: 48px;
     text-transform: uppercase;
     color: ${({theme}) => theme.colors.background};
+
+    @media (max-width: 599px) {
+    font-size: 16px;
+  }
 
     strong {
       color: ${({theme}) => theme.colors.gray[200]};
@@ -30,6 +35,10 @@ export const Container = styled.div`
       font-size: 46px;
       text-transform: uppercase;
 
+      @media (max-width: 599px) {
+        font-size: 24px;
+      }
+
       strong {
         font-weight: 800;
         color: ${({ theme }) => theme.colors.gray[200]};
@@ -42,8 +51,12 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-width: 500px;
+  width: 500px;
   margin-top: 48px;
+
+  @media (max-width: 599px) {
+    width: 300px;
+  }
 `;
 
 export const Textarea = styled.textarea`
@@ -61,6 +74,10 @@ export const Textarea = styled.textarea`
   font-size: 16px;
   transition: border 0.2s ease-in;
   appearance: none;
+
+  @media (max-width: 599px) {
+    font-size: 14px;
+  }
 
   &::placeholder {
     color: ${({theme}) => theme.colors.primary.main};
@@ -96,6 +113,10 @@ export const ContactDetails = styled.div`
     justify-content: center;
     text-decoration: none;
     font-size: 28px;
+
+    @media (max-width: 599px) {
+    font-size: 18px;
+  }
 
     span {
       margin-left: 8px;

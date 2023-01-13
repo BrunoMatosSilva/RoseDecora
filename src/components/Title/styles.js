@@ -7,6 +7,10 @@ export const Container = styled.div`
       text-transform: uppercase;
       font-weight: 800;
 
+      @media (max-width: 599px) {
+        font-size: 24px;
+      }
+
       strong {
         font-weight: 800;
         color: ${({ theme }) => theme.colors.primary.main};

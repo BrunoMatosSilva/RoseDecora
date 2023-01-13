@@ -47,11 +47,13 @@ export default function Posts({postsPagination}){
 
   return(
     <Container>
-      <HeaderBack />
-      <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
-      <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
+      <HeaderBack path="/" />
 
       <Content>
+        <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
+        <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
+
+
         <ContainerPosts>
           {posts.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>

@@ -6,6 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
   margin-bottom: 2rem;
 
+  @media (max-width: 599px) {
+    height: 100%;
+  }
+
   a {
     text-decoration: none;
     opacity: 0.8;
@@ -23,6 +27,10 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 32px;
+
+  @media (max-width: 599px) {
+    margin: 0 10px;
+  }
 `;
 
 export const ContainerPosts = styled.div`
@@ -30,6 +38,11 @@ export const ContainerPosts = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   margin-top: 48px;
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
 `;
 
 export const CardPost = styled.div`
@@ -37,6 +50,10 @@ export const CardPost = styled.div`
   min-height: 250px;
   border-radius: 8px;
   border: 1px solid ${({theme}) => theme.colors.primary.main};
+
+  @media (max-width: 599px) {
+    width: 280px;
+  }
 
   img {
     width: 100%;

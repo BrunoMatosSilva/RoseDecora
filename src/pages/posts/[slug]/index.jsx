@@ -9,7 +9,7 @@ export default function Post({post}) {
 
   return(
     <Container>
-      <HeaderBack />
+      <HeaderBack path="/posts" />
       <BannerProjeto
         title={post.title}
         imgUrl={post.image}

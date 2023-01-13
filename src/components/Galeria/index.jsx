@@ -29,37 +29,39 @@ export function Galeria({ images}) {
   }
 
   return (
-    <Container data-aos="fade-right" data-aos-delay="100">
+    <>
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}
         imageVisible={imageVisible}
         currentIndex={currentIndex}
       />
-      <ContentGalery >
-        <Title titleFirst="Decorações" titleLast="Realizadas!"/>
-        <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
+      <Container>
+        <ContentGalery >
+          <Title titleFirst="Decorações" titleLast="Realizadas!"/>
+          <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
 
-        <div ref={sliderRef} className="keen-slider containerSlaide">
-          {images.map((image) => (
-            <CardGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
-              <button onClick={() => handleOpenModal(image)}>
-                <img src={image.url}
-                  alt={image.title}
-                />
-              </button>
-              <div>
-                <p>Clique na imagem para ver tamanho original.</p>
-              </div>
-            </CardGalery>
-          ))}
-        </div>
+          <div ref={sliderRef} className="keen-slider containerSlaide">
+            {images.map((image) => (
+              <CardGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
+                <button onClick={() => handleOpenModal(image)}>
+                  <img src={image.url}
+                    alt={image.title}
+                  />
+                </button>
+                <div>
+                  <p>Clique na imagem para ver tamanho original.</p>
+                </div>
+              </CardGalery>
+            ))}
+          </div>
 
-        <Footer>
-          <Link href="/decoracoes">Ver Decorações</Link>
-        </Footer>
+          <Footer>
+            <Link href="/decoracoes">Ver Decorações</Link>
+          </Footer>
 
-      </ContentGalery>
-    </Container>
+        </ContentGalery>
+      </Container>
+    </>
   );
 }

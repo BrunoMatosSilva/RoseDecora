@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
+
+  @media (max-width: 599px) {
+        height: 100%;
+  }
 `;
 
 export const ContentGalery = styled.div`
@@ -14,6 +18,13 @@ export const ContentGalery = styled.div`
   margin: 0 auto;
   padding-top: 70px;
 
+  @media (max-width: 599px) {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding-top: 60px;
+  }
+
   p {
     margin-bottom: 28px;
   }
@@ -21,10 +32,16 @@ export const ContentGalery = styled.div`
   .containerSlaide {
     width: 100%;
     height: 100%;
+
+    @media (max-width: 599px) {
+    width: 320px;
+    height: 260px;
+  }
   }
 `;
 
 export const CardGalery = styled.div`
+
  button{
     position: absolute;
     opacity: 0.6;
@@ -41,6 +58,11 @@ export const CardGalery = styled.div`
         width: 550px;
         border: 1px solid ${({theme}) => theme.colors.primary.main};
         border-radius: 8px;
+
+        @media (max-width: 599px) {
+          height: 260px;
+          width: 250px;
+        }
       }
   }
 
@@ -51,6 +73,10 @@ export const CardGalery = styled.div`
     background: rgb(0,194,203);
     background: linear-gradient(180deg, rgba(0,194,203,1) 0%, rgba(44,180,155,1) 95%);
     opacity: 0.6;
+
+    @media (max-width: 599px) {
+    max-width: 320px;
+  }
 
     strong {
       font-size: 18px;
@@ -67,6 +93,10 @@ export const CardGalery = styled.div`
 
 export const Footer = styled.div`
   margin: 48px 0;
+
+    @media (max-width: 599px) {
+          width: 100%;
+    }
 
   a {
   height: 52px;

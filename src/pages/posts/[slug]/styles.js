@@ -23,6 +23,10 @@ export const Container = styled.div`
       font-size: 46px;
       text-align: center;
       text-transform: uppercase;
+
+      @media (max-width: 599px) {
+        font-size: 20px;
+      }
     }
 
     span {
@@ -30,6 +34,10 @@ export const Container = styled.div`
       display: flex;
       justify-content: flex-start;
       font-size: 18px;
+
+      @media (max-width: 599px) {
+        font-size: 14px;
+      }
 
       date {
         margin-left: 10px;
@@ -40,14 +48,12 @@ export const Container = styled.div`
     width: 100%;
     padding: 0 5rem;
     p {
-      color: ${({ theme }) => theme.textLight};
       font-size: 18px;
       font-weight: 300;
       text-align: justify;
       text-indent: 2rem;
     }
     h2 {
-      color: ${({ theme }) => theme.secondary};
       margin-top: 1rem;
       font-size: 2.5rem;
       font-weight: bold;
@@ -55,7 +61,6 @@ export const Container = styled.div`
     ul {
       margin-top: 1rem;
       li {
-        color: ${({ theme }) => theme.textLight};
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
         margin-left: 1rem;
@@ -65,7 +70,7 @@ export const Container = styled.div`
 
     img {
       display: block;
-      width: 50%;
+      width: 80%;
       margin: 1rem auto;
       border-radius: 20px;
       border: 1px solid ${({theme}) => theme.colors.primary.dark};
@@ -73,7 +78,7 @@ export const Container = styled.div`
     @media (max-width: 700px) {
       padding: 0 2.5rem;
       p {
-        font-size: 1rem;
+        font-size: 14px;
       }
       h2 {
         font-size: 1.5rem;

@@ -7,8 +7,23 @@ import { Button } from '../Button';
 import { Title } from '../Title';
 
 export function BannerHero() {
+
+  function handleScrollDecoration() {
+    window.scroll({
+      top: 850,
+      behavior: 'smooth'
+    });
+  }
+
+  function handleScrollContato() {
+    window.scroll({
+      top: 2680,
+      behavior: 'smooth'
+    });
+  }
+
   return (
-    <Container data-aos="fade-right">
+    <Container>
       <ContentBanner>
         <CardBanner>
           <Title titleFirst="Sua Festa" titleLast="da cor do seu sonho!" />
@@ -40,13 +55,14 @@ export function BannerHero() {
           <Rodape>
 
             <Button
+              onClick={handleScrollDecoration}
             >
               Decorações
             </Button>
 
             <div>
               <strong>
-                <a href="#">Fale Conosco</a>
+                <button onClick={handleScrollContato}>Fale Conosco</button>
               </strong>
               <span>
                 <Image src={arrow} alt="seta para esquerda"/>

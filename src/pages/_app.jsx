@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={themes}>
       <NextNProgress
-        color={themes.primary}
+        color={themes.colors.primary.lighter}
         startPosition={0.3}
         stopDelayMs={200}
         height={3}

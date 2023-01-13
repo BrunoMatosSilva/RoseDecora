@@ -9,6 +9,13 @@ export const Container = styled.div`
   position: sticky;
   top:0%;
   z-index: 999;
+
+  @media (max-width: 599px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 `;
 
 export const Content = styled.div`
@@ -18,10 +25,27 @@ export const Content = styled.div`
   justify-content: space-between;
   margin: 0 auto;
 
+  @media (max-width: 599px) {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+    img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  }
+
   ul {
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 599px) {
+      padding-bottom: 1rem;
+      gap: 1rem;
+    }
 
     li {
       list-style-type: none;
@@ -36,6 +60,10 @@ export const Content = styled.div`
 
         &:hover {
           font-weight: 600;
+        }
+
+        @media (max-width: 599px) {
+          font-size: 14px;
         }
       }
     }

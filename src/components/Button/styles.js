@@ -35,4 +35,8 @@ export const StyledButton = styled.button`
       background: ${theme.colors.primary.dark};
     }
   `}
+
+  @media (max-width: 599px) {
+        width: 100%;
+  }
 `;

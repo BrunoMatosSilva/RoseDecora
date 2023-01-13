@@ -32,6 +32,7 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   animation: ${fadeIn} 0.3s;
+  z-index: 999;
 
   ${({ isLeaving }) => isLeaving && css`animation: ${fadeOut} 0.2s;`}
 `;
@@ -41,12 +42,15 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 700px;
   background: #fff;
   border-radius: 4px;
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
   animation: ${scaleIn} 0.3s;
+
+  @media (max-width: 599px) {
+    width: 300px;
+  }
 
   ${({ isLeaving }) => isLeaving && css`animation: ${scaleOut} 0.2s;`}
 

@@ -11,6 +11,15 @@ export const Container = styled.footer`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 599px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
     button {
       background: none;
       border: none;
@@ -32,7 +41,7 @@ export const Container = styled.footer`
           }
       }
     }
-    @media (max-width: 450px) {
+    @media (max-width: 599px) {
       button {
         svg {
           width: 1.5rem;
@@ -45,6 +54,11 @@ export const Container = styled.footer`
       align-items: center;
       gap: 1rem;
       margin-right: 5rem;
+
+      @media (max-width: 599px) {
+        margin-right: 0;
+      }
+
       svg {
         width: 2rem;
         height: 2rem;
@@ -57,12 +71,14 @@ export const Container = styled.footer`
         }
       }
     }
-    @media (max-width: 450px) {
+    @media (max-width: 599px) {
       button {
         font-size: 0.9rem;
+        margin-left: 0;
+        padding-top: 0.5rem;
       }
       > section {
-        gap: 0.5rem;
+        gap: 0.2rem;
         svg {
           width: 1.5rem;
           height: 1.5rem;

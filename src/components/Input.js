@@ -15,6 +15,10 @@ export default styled.input`
   transition: border 0.2s ease-in;
   appearance: none;
 
+  @media (max-width: 599px) {
+    font-size: 14px;
+  }
+
   &::placeholder {
     color: ${({theme}) => theme.colors.primary.main};
   }
