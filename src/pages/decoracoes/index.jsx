@@ -2,7 +2,7 @@ import { mapImageResources, search } from '../../lib/cloudinary';
 import { Modal } from '../../components/Modal';
 import { Button } from '../../components/Button';
 import imgNotFound from '../../assets/images/imagenotfound.svg';
-import { Container, Content, ContentGalery, ContentImagesNotFound } from './styles';
+import { Container, Content, ContentGalery, ContentImagesNotFound } from '../../styles/pages/decorações/styles';
 import { useState } from 'react';
 import { Title } from '../../components/Title';
 import { HeaderBack } from '../../components/HeaderBack';

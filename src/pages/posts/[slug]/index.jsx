@@ -3,7 +3,7 @@ import { RichText } from 'prismic-dom';
 import BannerProjeto from '../../../components/BannerProjeto';
 import { HeaderBack } from '../../../components/HeaderBack';
 import { getPrismicClient } from '../../api/prismic';
-import { Container } from './styles';
+import { Container } from '../../../styles/pages/post/styles';
 
 export default function Post({post}) {
 

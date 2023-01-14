@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Prismic from '@prismicio/client';
 
 import { Title } from '../../components/Title';
-import { CardPost, Container, ContainerPosts, Content, ContentPostNotFound, Footer } from './styles';
+import { CardPost, Container, ContainerPosts, Content, ContentPostNotFound, Footer } from '../../styles/pages/posts/styles';
 import imgPostNotFound from '../../assets/images/postnotfound.svg';
 import { getPrismicClient } from '../api/prismic';
 import { RichText } from 'prismic-dom';
