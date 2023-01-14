@@ -12,6 +12,11 @@ export const Container = styled.div`
    background-image: none;
    height: 100%;
   }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    background-image: none;
+    height: 100%;
+  }
 `;
 
 export const ContentBanner = styled.div`
@@ -29,6 +34,13 @@ flex: 1;
     max-width: 320px;
   }
 
+  @media (min-width: 600px) and (max-width: 1240px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+
 `;
 
 export const CardBanner = styled.div`
@@ -39,6 +51,12 @@ export const CardBanner = styled.div`
 
   @media (max-width: 599px) {
     width: 300px;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    width: 400px;
     box-shadow: none;
     padding: 10px;
   }
@@ -130,8 +148,12 @@ export const Rodape = styled.div`
 export const ImageBanner = styled.div`
   margin-left: 34px;
 
-  @media (max-width: 599px) {
+      @media (max-width: 599px) {
        margin-left: 0px;
+      }
+
+      @media (min-width: 600px) and (max-width: 1240px) {
+        margin-left: 0;
       }
 
     > img {
@@ -140,6 +162,10 @@ export const ImageBanner = styled.div`
 
       @media (max-width: 599px) {
         height: 270px;
+        width: 300px;
+      }
+
+      @media (min-width: 600px) and (max-width: 1240px) {
         width: 300px;
       }
     }

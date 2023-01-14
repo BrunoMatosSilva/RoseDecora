@@ -25,6 +25,11 @@ export const ContentGalery = styled.div`
     padding-top: 60px;
   }
 
+  @media (min-width: 600px) and (max-width: 1240px) {
+    width: 100%;
+    height: 100%;
+  }
+
   p {
     margin-bottom: 28px;
   }
@@ -35,7 +40,7 @@ export const ContentGalery = styled.div`
 
     @media (max-width: 599px) {
     width: 320px;
-    height: 260px;
+    height: 100%;
   }
   }
 `;
@@ -120,5 +125,23 @@ export const Footer = styled.div`
   &:active {
     background: ${({theme}) => theme.colors.primary.dark};
   }
+  }
+`;
+
+export const ContentImagesNotFound = styled.div`
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+> img {
+    width: 80%;
+    height: 80%;
+}
+
+  span {
+    color: ${({theme}) => theme.colors.primary.dark};
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 16px;
   }
 `;

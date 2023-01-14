@@ -1,11 +1,12 @@
 import { mapImageResources, search } from '../../lib/cloudinary';
 import { Modal } from '../../components/Modal';
 import { Button } from '../../components/Button';
-
-import { Container, Content, ContentGalery } from './styles';
+import imgNotFound from '../../assets/images/imagenotfound.svg';
+import { Container, Content, ContentGalery, ContentImagesNotFound } from './styles';
 import { useState } from 'react';
 import { Title } from '../../components/Title';
 import { HeaderBack } from '../../components/HeaderBack';
+import Image from 'next/image';
 
 export default function Decoracoes({
   images: defaultImages,
@@ -19,6 +20,8 @@ export default function Decoracoes({
   const [images, setImages] = useState(defaultImages);
   const [nextCursor, setNextCursor] = useState(defaultNextCursor);
 
+
+  console.log(images.length);
   async function handleLoadMore(e) {
     e.preventDefault();
 
@@ -61,6 +64,15 @@ export default function Decoracoes({
       <Content>
         <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
         <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
+
+        {images.length < 1 && (
+          <ContentImagesNotFound>
+            <Image src={imgNotFound} alt="Nenhuma Imagem Encontrado" />
+            <span>Nenhuma imagem foi encontrado!</span>
+          </ContentImagesNotFound>
+
+        )}
+
         <section>
           {images.map((image) => (
             <ContentGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
@@ -72,7 +84,7 @@ export default function Decoracoes({
             </ContentGalery>
           ))}
         </section>
-        {nextCursor !== undefined && (
+        {nextCursor !== undefined || images.length < 1 && (
           <div className="buttonLoadMore">
             <Button secondary="secondary" onClick={handleLoadMore}>
             Carregar Mais

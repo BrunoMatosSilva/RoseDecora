@@ -81,3 +81,21 @@ export const ContentGalery = styled.div`
     }
    }
   `;
+
+export const ContentImagesNotFound = styled.div`
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+> img {
+    width: 80%;
+    height: 80%;
+}
+
+  span {
+    color: ${({theme}) => theme.colors.primary.dark};
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 16px;
+  }
+`;

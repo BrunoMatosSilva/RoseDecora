@@ -14,15 +14,14 @@ export function Blog({postsBlog}) {
         <p>Aqui você pode ver algumas matérias ou dicas sobre esse universo da
         decoração que transforma sonhos em realidade.</p>
 
+        {postsBlog.length < 1 && (
+          <ContentPostNotFound>
+            <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
+            <span>Nenhum post foi encontrado!</span>
+          </ContentPostNotFound>
+
+        )}
         <ContainerPosts>
-          {postsBlog.length < 1 && (
-            <ContentPostNotFound>
-              <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
-              <span>Nenhum post foi encontrado!</span>
-            </ContentPostNotFound>
-
-          )}
-
           {postsBlog.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <CardPost >

@@ -43,10 +43,18 @@ export function BannerHero() {
 
           <ContentSocial>
 
-            <a href="#">
+            <a
+              href="https://pt-br.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FacebookLogo />
             </a>
-            <a href="#">
+            <a
+              href="https://www.instagram.com/rosefrancisdecoracoes/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <InstagramLogo />
             </a>
 
@@ -69,7 +77,6 @@ export function BannerHero() {
               </span>
             </div>
           </Rodape>
-
         </CardBanner>
 
         <ImageBanner>

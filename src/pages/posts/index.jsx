@@ -50,8 +50,8 @@ export default function Posts({postsPagination}){
       <HeaderBack path="/" />
 
       <Content>
-        <Title titleFirst="Nossos trabalhos" titleLast="Realizados!" />
-        <p>Aqui você pode ver todos os nossos trabalhos postados no site. Clique na imagem para ampliar.</p>
+        <Title titleFirst="Blog: Tudo Sobre" titleLast="Decoração!" />
+        <p>Aqui você pode ver algumas matérias ou dicas sobre esse universo da decoração que transforma sonhos em realidade.</p>
 
 
         <ContainerPosts>

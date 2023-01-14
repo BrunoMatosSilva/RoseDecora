@@ -2,13 +2,15 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 
 import { Title } from '../Title';
+import imgNotFound from '../../assets/images/imagenotfound.svg';
 
-import { CardGalery, Container, ContentGalery, Footer} from './styles';
+import { CardGalery, Container, ContentGalery, ContentImagesNotFound, Footer} from './styles';
 import {useState } from 'react';
 import { Modal } from '../Modal';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export function Galeria({ images}) {
+export function Galeria({ images }) {
   const [showModal, setShowModal] = useState(false);
   const [imageVisible, setImageVisible] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -40,6 +42,14 @@ export function Galeria({ images}) {
         <ContentGalery >
           <Title titleFirst="Decorações" titleLast="Realizadas!"/>
           <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
+
+          {images.length < 1 && (
+            <ContentImagesNotFound>
+              <Image src={imgNotFound} alt="Nenhuma Imagem Encontrado" />
+              <span>Nenhuma imagem foi encontrado!</span>
+            </ContentImagesNotFound>
+
+          )}
 
           <div ref={sliderRef} className="keen-slider containerSlaide">
             {images.map((image) => (

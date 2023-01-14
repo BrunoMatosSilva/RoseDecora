@@ -39,6 +39,11 @@ export const ContainerPosts = styled.div`
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 `;
 
 export const CardPost = styled.div`
@@ -49,6 +54,10 @@ export const CardPost = styled.div`
 
   @media (max-width: 599px) {
     width: 280px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    width: 240px;
   }
 
   img {
@@ -114,9 +123,11 @@ export const ContentPostNotFound = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
-  img {
+justify-content: center;
+> img {
+    width: 80%;
     height: 80%;
-  }
+}
 
   span {
     color: ${({theme}) => theme.colors.primary.dark};

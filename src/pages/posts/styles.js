@@ -26,7 +26,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 32px;
+  margin-top: 32px;
+  padding: 0 10px;
 
   @media (max-width: 599px) {
     margin: 0 10px;
@@ -43,6 +44,11 @@ export const ContainerPosts = styled.div`
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 `;
 
 export const CardPost = styled.div`
@@ -53,6 +59,10 @@ export const CardPost = styled.div`
 
   @media (max-width: 599px) {
     width: 280px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1240px) {
+    width: 240px;
   }
 
   img {
@@ -124,7 +134,8 @@ flex-direction: column;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    img {
+    > img {
+    width: 80%;
     height: 80%;
   }
 
