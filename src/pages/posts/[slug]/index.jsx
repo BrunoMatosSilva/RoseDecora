@@ -11,17 +11,17 @@ export default function Post({post}) {
     <Container>
       <HeaderBack path="/posts" />
       <BannerProjeto
-        title={post.title}
-        imgUrl={post.image}
+        title={post?.title}
+        imgUrl={post?.image}
       />
       <section>
         <div className="header">
-          <h1>{post.title}</h1>
+          <h1>{post?.title}</h1>
           <span>
-            <b>Data:</b><date>{post.createdAt}</date>
+            <b>Data:</b><date>{post?.createdAt}</date>
           </span>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.text}} />
+        <div dangerouslySetInnerHTML={{ __html: post?.text}} />
       </section>
     </Container>
   );
