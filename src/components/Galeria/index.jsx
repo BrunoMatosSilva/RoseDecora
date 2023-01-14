@@ -39,19 +39,19 @@ export function Galeria({ images }) {
         currentIndex={currentIndex}
       />
       <Container>
-        <ContentGalery >
+        <ContentGalery>
           <Title titleFirst="Decorações" titleLast="Realizadas!"/>
           <p>Aqui você pode ver alguns dos nossos trabalhos.</p>
 
           {images.length < 1 && (
-            <ContentImagesNotFound>
+            <ContentImagesNotFound data-aos="fade-up-left">
               <Image src={imgNotFound} alt="Nenhuma Imagem Encontrado" />
               <span>Nenhuma imagem foi encontrado!</span>
             </ContentImagesNotFound>
 
           )}
 
-          <div ref={sliderRef} className="keen-slider containerSlaide">
+          <div ref={sliderRef} className="keen-slider containerSlaide" data-aos="fade-up-left">
             {images.map((image) => (
               <CardGalery imgUrl={image.url} key={image.id} className="keen-slider__slide">
                 <button onClick={() => handleOpenModal(image)}>

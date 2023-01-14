@@ -15,13 +15,13 @@ export function Blog({postsBlog}) {
         decoração que transforma sonhos em realidade.</p>
 
         {postsBlog.length < 1 && (
-          <ContentPostNotFound>
+          <ContentPostNotFound data-aos="fade-up-left">
             <Image src={imgPostNotFound} alt="Nenhum Post Encontrado" />
             <span>Nenhum post foi encontrado!</span>
           </ContentPostNotFound>
 
         )}
-        <ContainerPosts>
+        <ContainerPosts data-aos="fade-up-left">
           {postsBlog.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <CardPost >
