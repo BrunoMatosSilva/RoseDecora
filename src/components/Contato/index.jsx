@@ -7,7 +7,7 @@ import { FormContato } from './Form';
 export function Contato() {
   return (
     <Container>
-      <header data-aos="fade-up-right">
+      <header>
         <h1>Interessado em nossos <strong>serviços ?</strong></h1>
         <Image src={separador} alt="separador" />
       </header>

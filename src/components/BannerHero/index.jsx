@@ -25,7 +25,7 @@ export function BannerHero() {
   return (
     <Container>
       <ContentBanner>
-        <CardBanner data-aos="fade-right">
+        <CardBanner>
           <Title titleFirst="Sua Festa" titleLast="da cor do seu sonho!" />
 
           <div className="text">
@@ -79,7 +79,7 @@ export function BannerHero() {
           </Rodape>
         </CardBanner>
 
-        <ImageBanner data-aos="fade-left">
+        <ImageBanner>
           <Image src={banner} alt="party" />
         </ImageBanner>
       </ContentBanner>

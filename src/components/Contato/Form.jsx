@@ -56,7 +56,7 @@ export function FormContato(){
   }
 
   return (
-    <Form onSubmit={handleSubmit} data-aos="fade-up">
+    <Form onSubmit={handleSubmit}>
       <Input
         placeholder="NOME *"
         value={nome}
