@@ -9,7 +9,7 @@ export function Blog({postsBlog}) {
 
   return (
     <Container>
-      <Content>
+      <Content id="blog">
         <Title titleFirst="Curisosidades sobre" titleLast="Decoração!" />
         <p>Aqui você pode ver algumas matérias ou dicas sobre esse universo da
         decoração que transforma sonhos em realidade.</p>

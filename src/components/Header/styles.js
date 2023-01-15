@@ -50,7 +50,7 @@ export const Content = styled.div`
     li {
       list-style-type: none;
 
-      button {
+      a, button {
         text-decoration: none;
         color: ${({theme}) => theme.colors.gray[300]};
         font-size: 16px;

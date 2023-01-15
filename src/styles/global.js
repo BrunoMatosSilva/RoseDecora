@@ -19,6 +19,10 @@ export default createGlobalStyle`
       background: ${({ theme }) => theme.colors.primary.lighter};
     }
 }
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-size: 16px;
   background: ${({ theme }) => theme.colors.background};

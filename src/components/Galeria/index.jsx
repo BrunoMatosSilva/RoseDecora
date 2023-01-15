@@ -38,7 +38,7 @@ export function Galeria({ images }) {
         imageVisible={imageVisible}
         currentIndex={currentIndex}
       />
-      <Container>
+      <Container id="galeria">
         <ContentGalery>
           <Title titleFirst="Decorações" titleLast="Realizadas!"/>
           <p>Aqui você pode ver alguns dos nossos trabalhos.</p>

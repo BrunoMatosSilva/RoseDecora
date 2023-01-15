@@ -23,7 +23,7 @@ export function BannerHero() {
   }
 
   return (
-    <Container>
+    <Container id="home">
       <ContentBanner>
         <CardBanner>
           <Title titleFirst="Sua Festa" titleLast="da cor do seu sonho!" />

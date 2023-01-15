@@ -12,27 +12,6 @@ export function Header() {
     });
   }
 
-  function handleScrollDecoration() {
-    window.scroll({
-      top: 850,
-      behavior: 'smooth'
-    });
-  }
-
-  function handleScrollBlog() {
-    window.scroll({
-      top: 1700,
-      behavior: 'smooth'
-    });
-  }
-
-  function handleScrollContato() {
-    window.scroll({
-      top: 2680,
-      behavior: 'smooth'
-    });
-  }
-
   return (
     <Container>
       <Content>
@@ -41,9 +20,9 @@ export function Header() {
         </span>
         <ul>
           <li><button onClick={handleScrollTop}>Home</button></li>
-          <li><button onClick={handleScrollDecoration}>Decorações</button></li>
-          <li><button onClick={handleScrollBlog}>Blog</button></li>
-          <li><button onClick={handleScrollContato}>Contato</button></li>
+          <li><a href="#galeria">Decorações</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href='#contato'>Contato</a></li>
         </ul>
       </Content>
     </Container>
