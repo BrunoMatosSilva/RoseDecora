@@ -14,8 +14,16 @@ function Rodape() {
     <Container>
       <div className="container">
         <section>
-          <a href="https://github.com/BrunoMatosSilva" target="_blank" rel="noreferrer"><FacebookLogo/></a>
-          <a href="https://www.linkedin.com/in/bmsfrontend" target='_blank' rel="noreferrer"><InstagramLogo /></a>
+          <a href="https://pt-br.facebook.com/"
+            target="_blank"
+            rel="noreferrer">
+            <FacebookLogo/>
+          </a>
+          <a href="https://www.instagram.com/rosefrancisdecoracoes/"
+            target="_blank"
+            rel="noreferrer">
+            <InstagramLogo />
+          </a>
         </section>
 
         <p>
