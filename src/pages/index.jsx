@@ -59,6 +59,6 @@ export async function getStaticProps() {
       images,
       postsBlog
     },
-    revalidate: 300
+    revalidate: 3600
   };
 }
