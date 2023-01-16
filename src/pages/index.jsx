@@ -58,6 +58,7 @@ export async function getStaticProps() {
     props: {
       images,
       postsBlog
-    }
+    },
+    revalidate: 300
   };
 }
