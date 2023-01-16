@@ -123,6 +123,7 @@ export async function getStaticProps() {
   return {
     props: {
       postsPagination
-    }
+    },
+    revalidate: 3600
   };
 }
