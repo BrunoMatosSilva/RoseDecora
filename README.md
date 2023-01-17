@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">RoseFrancis - Decoração de Festa</h1>
+<p align="center">Landpage e Blog feito em um case de Freelance para atender a divulgação de eventos decorativos realizados pela empresa Rose Francis.</p>
 
-## Getting Started
+## Home Page
 
-First, run the development server:
+<h1 align="center">
+<img src="https://user-images.githubusercontent.com/69808542/212894412-526ee7bd-9c4d-4af4-ae06-ce70cb9f1501.PNG" />
+</h1>
+
+<h1 align="center">Tecnologias Usadas</h1>
+<ul>
+<li>NextJS.</li>
+<li>PrismicCMS.</li>
+<li>Cloudinary</li>
+<li>Styled Components.</li>
+<li>EmailJS.</li>
+<li>React Hot Toast.</li>
+</ul>
+
+<h1 align="center">O que temos no Projeto</h1>
+<ul>
+<li> Design Responsivo Completo.</li>
+<li> Fotos sendo pegas pela API do Cloudinary.</li>
+<li> Post do Blog sendo pegos pela API do Prismic CMS.</li>
+<li> Styled Components usado para todo o Css do site.</li>
+<li> EmailJS usado no formulário para enviar os dados para o e-mail do cliente.</li>
+<li> React Hot Toasty para a validação do formulário.</li>
+</ul>
+
+<h1 align="center">Pré-Requisito</h1>
+
+<p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+Git, Node.js.</p>
+<p>Além disto é bom ter um editor para trabalhar com o código como VSCode</p>
+
+<h1 align="center">Instalação</h1>
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Abra um terminal e copie esse repositorio e cole esse comando:
+git clone https://github.com/BrunoMatosSilva/portfolio.git 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# Acesse a pasta da aplicação
+$ cd portfolio
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Instale as dependências
+$ yarn
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Inicie a aplicação
+$ yarn dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<h1 align="center">Link do Projeto Online</h1>
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[RoseFrancis](https://rosefranciseventos.vercel.app/)
