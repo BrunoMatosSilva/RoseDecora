@@ -4,11 +4,30 @@ import BannerProjeto from '../../../components/BannerProjeto';
 import { HeaderBack } from '../../../components/HeaderBack';
 import { getPrismicClient } from '../../api/prismic';
 import { Container } from '../../../styles/pages/post/styles';
+import Head from 'next/head';
 
 export default function Post({post}) {
 
   return(
     <Container>
+
+      <Head>
+        <title>{post?.title} | Publicações </title>
+
+        <meta
+          name="description"
+          content="Aqui é nossa postagem sobre decoração de festa."
+        />
+        <meta property="og:image" content={post?.image} />
+        <meta property="og:image:secure_url" content={post?.image} />
+        <meta name="twitter:image" content={post?.image} />
+        <meta name="twitter:image:src" content={post?.image} />
+        <meta
+          property="og:description"
+          content="Aqui é nossa postagem sobre decoração de festa."
+        />
+      </Head>
+
       <HeaderBack path="/posts" />
       <BannerProjeto
         title={post?.title}

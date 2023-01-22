@@ -31,7 +31,7 @@ export function BannerHero() {
           <div className="text">
             <p>
           A decoração de uma festa não apenas deixa o evento mais especial, como revela os sonhos do aniversariante.
-          Nos dá <strong>RoseFrancis</strong> buscamos sempre atender ao pedido de nossos clientes.
+          Nos dá <strong>Rose Francis</strong> buscamos sempre atender ao pedido de nossos clientes.
             </p>
             <p>
           Fazendo com que o sonhos deles possam ser realizados em decorações especiais.

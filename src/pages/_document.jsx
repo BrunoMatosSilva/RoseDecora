@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Sora:wght@400;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <title>RoseFrancis | Decoração de Festa</title>

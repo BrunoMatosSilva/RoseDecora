@@ -11,6 +11,7 @@ import { Header } from '../components/Header';
 import Rodape from '../components/Rodape';
 import { getPrismicClient } from './api/prismic';
 import { useEffect } from 'react';
+import Head from 'next/head';
 
 export default function Home({images, postsBlog}) {
   useEffect(() => {
@@ -18,6 +19,23 @@ export default function Home({images, postsBlog}) {
   }, []);
   return (
     <>
+      <Head>
+        <title>Rose Francis | Decoração de Festa </title>
+
+        <meta
+          name="description"
+          content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes."
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta name="twitter:image" content="/ogimage.png" />
+        <meta name="twitter:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes."
+        />
+      </Head>
+
       <Header />
       <BannerHero />
       <Galeria images={images} />

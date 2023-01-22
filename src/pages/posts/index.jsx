@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { HeaderBack } from '../../components/HeaderBack';
 import { Button } from '../../components/Button';
 import { useState } from 'react';
+import Head from 'next/head';
 
 export default function Posts({postsPagination}){
 
@@ -47,6 +48,23 @@ export default function Posts({postsPagination}){
 
   return(
     <Container>
+      <Head>
+        <title>Rose Francis | Publicações </title>
+
+        <meta
+          name="description"
+          content="Aqui mostramos as nossas dicas de decoração para festas."
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta name="twitter:image" content="/ogimage.png" />
+        <meta name="twitter:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Aqui mostramos as nossas dicas de decoração para festas."
+        />
+      </Head>
+
       <HeaderBack path="/" />
 
       <Content>

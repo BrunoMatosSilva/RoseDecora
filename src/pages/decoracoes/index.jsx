@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Title } from '../../components/Title';
 import { HeaderBack } from '../../components/HeaderBack';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function Decoracoes({
   images: defaultImages,
@@ -53,6 +54,23 @@ export default function Decoracoes({
 
   return(
     <Container>
+      <Head>
+        <title>Rose Francis | Decorações </title>
+
+        <meta
+          name="description"
+          content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe."
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta name="twitter:image" content="/ogimage.png" />
+        <meta name="twitter:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe."
+        />
+      </Head>
+
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}
