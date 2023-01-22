@@ -60,7 +60,7 @@ export function Galeria({ images }) {
                   />
                 </button>
                 <div>
-                  <p>Clique na imagem para ver tamanho original.</p>
+                  <p>Clique para aumentar.</p>
                 </div>
               </CardGalery>
             ))}
