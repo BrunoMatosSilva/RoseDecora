@@ -20,20 +20,21 @@ export default function Home({images, postsBlog}) {
   return (
     <>
       <Head>
-        <title>Rose Francis | Decoração de Festa </title>
+        <title>Rose Francis | Decoração de Festa</title>
+        <meta name="title" content="Rose Francis | Decoração de Festa" />
+        <meta name="description" content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes." />
 
-        <meta
-          name="description"
-          content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes."
-        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="og:title" content="Rose Francis | Decoração de Festa" />
+        <meta property="og:description" content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes." />
         <meta property="og:image" content="/ogimage.png" />
-        <meta property="og:image:secure_url" content="/ogimage.png" />
-        <meta name="twitter:image" content="/ogimage.png" />
-        <meta name="twitter:image:src" content="/ogimage.png" />
-        <meta
-          property="og:description"
-          content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes."
-        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="twitter:title" content="Rose Francis | Decoração de Festa" />
+        <meta property="twitter:description" content="Nós da Rose Francis buscamos em cada decoração de festa fazer o sonho uma realidade para nossos clientes." />
+        <meta property="twitter:image" content="/ogimage.png" />
       </Head>
 
       <Header />

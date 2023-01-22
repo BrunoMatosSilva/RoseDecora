@@ -50,19 +50,20 @@ export default function Posts({postsPagination}){
     <Container>
       <Head>
         <title>Rose Francis | Publicações </title>
+        <meta name="title" content="Rose Francis | Publicações" />
+        <meta name="description" content="Aqui mostramos as nossas dicas de decoração para festas." />
 
-        <meta
-          name="description"
-          content="Aqui mostramos as nossas dicas de decoração para festas."
-        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="og:title" content="Rose Francis | Publicações" />
+        <meta property="og:description" content="Aqui mostramos as nossas dicas de decoração para festas." />
         <meta property="og:image" content="/ogimage.png" />
-        <meta property="og:image:secure_url" content="/ogimage.png" />
-        <meta name="twitter:image" content="/ogimage.png" />
-        <meta name="twitter:image:src" content="/ogimage.png" />
-        <meta
-          property="og:description"
-          content="Aqui mostramos as nossas dicas de decoração para festas."
-        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="twitter:title" content="Rose Francis | Publicações" />
+        <meta property="twitter:description" content="Aqui mostramos as nossas dicas de decoração para festas." />
+        <meta property="twitter:image" content="/ogimage.png" />
       </Head>
 
       <HeaderBack path="/" />

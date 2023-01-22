@@ -56,19 +56,20 @@ export default function Decoracoes({
     <Container>
       <Head>
         <title>Rose Francis | Decorações </title>
+        <meta name="title" content="Rose Francis | Decorações" />
+        <meta name="description" content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe." />
 
-        <meta
-          name="description"
-          content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe."
-        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="og:title" content="Rose Francis | Decorações" />
+        <meta property="og:description" content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe." />
         <meta property="og:image" content="/ogimage.png" />
-        <meta property="og:image:secure_url" content="/ogimage.png" />
-        <meta name="twitter:image" content="/ogimage.png" />
-        <meta name="twitter:image:src" content="/ogimage.png" />
-        <meta
-          property="og:description"
-          content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe."
-        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://rosefranciseventos.vercel.app/" />
+        <meta property="twitter:title" content="Rose Francis | Decorações" />
+        <meta property="twitter:description" content="Aqui mostramos os nossas decoração de festas já realizados por nossa equipe." />
+        <meta property="twitter:image" content="/ogimage.png" />
       </Head>
 
       <Modal
