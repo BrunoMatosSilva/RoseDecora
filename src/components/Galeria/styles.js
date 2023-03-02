@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
 
   @media (max-width: 599px) {
-        height: 100%;
+        height: 100vh;
   }
 `;
 
@@ -71,7 +71,7 @@ export const CardGalery = styled.div`
       }
   }
 
- > div {
+ div {
     margin-top: 480px;
     width: 550px;
     position: relative;
@@ -91,6 +91,7 @@ export const CardGalery = styled.div`
     p {
       font-size: 14px;
       margin-left: 14px;
+      display: none;
     }
   }
 

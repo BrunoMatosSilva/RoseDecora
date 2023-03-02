@@ -21,8 +21,6 @@ export default function Decoracoes({
   const [images, setImages] = useState(defaultImages);
   const [nextCursor, setNextCursor] = useState(defaultNextCursor);
 
-
-  console.log(images.length);
   async function handleLoadMore(e) {
     e.preventDefault();
 
@@ -103,7 +101,7 @@ export default function Decoracoes({
             </ContentGalery>
           ))}
         </section>
-        {nextCursor !== undefined || images.length < 1 && (
+        {nextCursor !== undefined && images.length > 1 && (
           <div className="buttonLoadMore">
             <Button secondary="secondary" onClick={handleLoadMore}>
             Carregar Mais
