@@ -125,6 +125,7 @@ export async function getStaticProps() {
     props: {
       images,
       nextCursor: nextCursor || false,
-    }
+    },
+    revalidate: 3600
   };
 }
